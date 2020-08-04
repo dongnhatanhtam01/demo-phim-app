@@ -1,0 +1,25 @@
+<p>site-header works!</p>
+<header class="header">
+    <a routerLink="/" class="header__logo" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}">
+        <img src="./assets/movPics/logo.svg" alt="">
+    </a>
+    <nav class="header__nav">
+        <ul>
+            <li class="active"><a href="#">Lịch chiếu</a></li>
+            <li><a href="#">Cụm rạp</a></li>
+            <li><a href="#">Tin Tức</a></li>
+            <li><a href="#">Ứng dụng</a></li>
+        </ul>
+    </nav>
+    <div *ngIf="!userLogo.taiKhoan; else userLogged" class="header__login">
+        <i class="fa fa-user-circle"></i>
+        <a routerLink="/signin" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}">Đăng nhập</a>
+        <a routerLink="/signup" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}">/ Đăng ký</a>
+    </div>
+    <ng-template #userLogged>
+        <select name="taiKhoanUser" id="taiKhoanUser">
+            <option [ngValue]="userLogo.taiKhoan">{{userLogo.taiKhoan}}</option>
+            <option [ngValue]="userLogo.taiKhoan">{{userLogo.taiKhoan}}</option>
+        </select>
+    </ng-template>
+</header>

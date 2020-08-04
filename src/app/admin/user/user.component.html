@@ -1,0 +1,76 @@
+<div class="tamdna_container mx-2">
+    <div class="m-2">
+        <label><i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm tài khoản </label>
+        <input class="mx-2" type="text" [(ngModel)]="$userFilter.tuKhoa" placeholder="tài khoản của bạn..." (keyup.enter)="onKey($event)">
+    </div>
+
+    <!-- Bang Danh Sach Nguoi Dung  -->
+    <div *ngIf="!$checkRong else NDreplace" class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tài Khoản</th>
+                        <th>Mật Khẩu</th>
+                        <th>Họ Tên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="$danh_sach_nguoi_dung">
+                    <tr *ngFor=" let dsnd of $danh_sach_nguoi_dung | paginate: { itemsPerPage: 5, currentPage: p };let i = index">
+                        <td scope="row">{{i+1}}</td>
+                        <td>{{dsnd.taiKhoan | shortcut}}</td>
+                        <td>{{dsnd.matKhau}}</td>
+                        <td>{{dsnd.hoTen}}</td>
+                        <td>{{dsnd.email | shortcut}}</td>
+                        <td>{{dsnd.soDt}}</td>
+                        <td>
+                            <button class="btn btn-secondary ">Ghi Danh</button>
+                            <button class="btn btn-secondary ml-2">Sửa</button>
+                            <button class="btn btn-secondary ml-2">x</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    </div>
+    <ng-template #NDreplace>
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tài Khoản</th>
+                        <th>Mật Khẩu</th>
+                        <th>Họ Tên</th>
+                        <th>Email</th>
+                        <th>Số điện thoại</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row"> </td>
+                        <td>{{$kqTimKiem.taiKhoan}}</td>
+                        <td>{{$kqTimKiem.matKhau}}</td>
+                        <td>{{$kqTimKiem.hoTen}}</td>
+                        <td>{{$kqTimKiem.email}}</td>
+                        <td>{{$kqTimKiem.soDt}}</td>
+                        <td>
+                            <button class="btn btn-secondary ">Ghi Danh</button>
+                            <button class="btn btn-secondary ml-2">Sửa</button>
+                            <button class="btn btn-secondary ml-2">x</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+</div>

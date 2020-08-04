@@ -1,0 +1,18 @@
+<!-- sửa lại một xíu từ layout header thành header của admin  -->
+<header class="header">
+    <a routerLink="/" class="header__logo" routerLinkActive="selected" [routerLinkActiveOptions]="{exact: true}">
+        <img src="./assets/movPics/logo.svg" alt="">
+    </a>
+    <nav class="header__nav">
+        <ul>
+            <li class="active"><a routerLinkActive="selected" routerLink="/admin">Quản lý người dùng</a></li>
+            <li><a routerLink="/admin/movie">Quản lý phim</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div>
+    <!-- chức năng quản lý  -->
+    <!-- outlet ra người dùng và phim của người dùng -->
+    <router-outlet></router-outlet>
+</div>

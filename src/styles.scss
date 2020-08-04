@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* 1rem =16 px  */
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+    border-left: 3px solid red;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+    border-left: 3px solid greenyellow;
+}

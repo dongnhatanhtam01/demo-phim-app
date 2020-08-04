@@ -1,0 +1,69 @@
+<section class="authen-signIn">
+    <div>
+        <div class="col-sm-6 mx-auto bg-white tamdna-row">
+            <form #signUpForm="ngForm" (ngSubmit)="dangKy(signUpForm.value)">
+                <div class="form-group">
+                    <label for="taiKhoan">Tài Khoản</label>
+                    <input type="text" class="form-control" name="taiKhoan" id="taiKhoan" ngModel required #taiKhoan="ngModel">
+                    <div *ngIf="taiKhoan.invalid && (taiKhoan.dirty || taiKhoan.touched)">
+                        <div *ngIf="taiKhoan.errors.required">
+                            Tài khoản không được bỏ trống
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="matKhau">Mật Khẩu</label>
+                    <input type="text" name="matKhau" id="matKhau" class="form-control" #matKhau="ngModel" ngModel required minlength="8" maxlength="20">
+                    <div *ngIf="matKhau.invalid && (matKhau.touched || matKhau.dirty)">
+                        <div *ngIf="matKhau.errors.required">
+                            Mật khẩu không được để trống
+                        </div>
+                        <div *ngIf="matKhau.errors.minlength">
+                            Mật khẩu tối thiểu 8 ký tự
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" id="email" #email="ngModel" name="email" type="text" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                        <div *ngIf="email.errors.required">Email không được trống</div>
+                        <div *ngIf="email.errors.pattern">Email không hợp lệ</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="soDt">Số điện thoại</label>
+                    <input type="tel" class="form-control" ngModel #soDt="ngModel" required id="soDt" name="soDt">
+                    <div *ngIf="soDt.invalid && (soDt.touched || soDt.dirty)">
+                        <div *ngIf="soDt.errors.required">
+                            Số điện thoại không được trống
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="hoTen">Họ tên</label>
+                    <input type="text" class="form-control" ngModel #hoTen="ngModel" required id="hoTen" name="hoTen">
+                    <div *ngIf="hoTen.invalid && (hoTen.touched || hoTen.dirty)">
+                        <div *ngIf="hoTen.errors.required">
+                            Họ tên không được trống
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maLoaiNguoiDung">Mã Loại Người Dùng</label>
+                    <select name="maLoaiNguoiDung" id="maLoaiNguoiDung" class="form-control" ngModel required #maLoaiNguoiDung="ngModel">
+                        <option value="">---</option>
+                        <option value="KhachHang">Khách Hàng</option>
+                        <option value="QuanTri">Quản trị viên</option>
+                    </select>
+                    <div *ngIf="maLoaiNguoiDung.invalid && (maLoaiNguoiDung.touched || maLoaiNguoiDung.dirty)">
+                        <div *ngIf="maLoaiNguoiDung.errors.required">Mã loại người dùng không hợp lệ</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-sm" [disabled]="signUpForm.invalid">Đăng Ký</button>
+                <button type="button" class="btn btn-primary mx-2 btn-sm" (click)="dangNhap()">Đăng Nhập</button>
+            </form>
+        </div>
+    </div>
+</section>

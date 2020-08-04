@@ -1,0 +1,27 @@
+footer {
+    background: #222;
+    color: #949494;
+    height: 500px;
+    padding: 2rem;
+    .footer-content {
+        //chinh sua vi tri
+        margin: auto 10%;
+        //cai dat chung
+        padding: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 250px;
+        justify-items: center;
+        //chinh sua chu
+        font-weight: lighter;
+        text-align: justify;
+        letter-spacing: .1rem;
+    }
+    p {
+        font-size: .8rem;
+        &:hover {
+            color: white;
+            transition: all .5s;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.header {
+    background-color: #fff;
+    height: 70px;
+    padding: 0 20px;
+    /* thiet lap thang cha cho thang con nam chung 1 hang  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .3);
+    /*xet vi tri*/
+    position: fixed;
+    /*lam thay doi width => set lai*/
+    width: 100%;
+    top: 0;
+    left: 0;
+    /*chinh do uu tien cua header*/
+    z-index: 10;
+}
+
+.header__logo img {
+    width: 100px;
+}
+
+.header__nav ul {
+    /* //bo dau cham di  */
+    list-style: none;
+    margin: unset;
+}
+
+.header__nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.header__nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.header__nav ul li a:hover {
+    color: #fa5238;
+    transition: all .4s;
+}
+
+.header__nav ul li.active a {
+    color: #fa5238;
+}
+
+.header__login {
+    color: #999;
+    font-size: 1rem;
+    /* chinh cho span va i nam giua  */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+            color: #fa5238;
+            transition: all .5s;
+        }
+    }
+}
+
+.header__login i {
+    font-size: 2rem !important;
+    margin-right: .8rem;
+}

@@ -1,0 +1,13 @@
+<!-- <section class="movie"> -->
+<div class="movie">
+    <div class="movie-grid">
+        <div *ngFor="let m of _movieList$" class="grid-item">
+            <ng-container>
+                <img *ngIf="m?.hinhAnh" [src]="m.hinhAnh" [alt]="">
+                <button class="movie-button" routerLink="/detail/{{m.maPhim}}">Chọn Phim</button>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<!-- </section> -->
+<router-outlet></router-outlet>

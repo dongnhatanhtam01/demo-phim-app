@@ -1,0 +1,29 @@
+<section class="authen-signIn">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <!-- tao tham chieu cho form -->
+            <form [formGroup]="signInForm" (ngSubmit)="dangNhap()" class="bg-light">
+                <div class="form-group">
+                    <label for="taiKhoan">Tài Khoản</label>
+                    <input type="text" id="taiKhoan" class="form-control" name="taiKhoan" formControlName="taiKhoan" placeholder="Nhập vào tài khoản...">
+                    <div *ngIf="
+                    signInForm.get('taiKhoan').invalid && 
+                    (signInForm.get('taiKhoan').touched || signInForm.get('taiKhoan').dirty)">
+                        <div *ngIf="signInForm.get('taiKhoan').errors.required">Tài khoản không được bỏ trống</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="matKhau">Mật Khẩu</label>
+                    <input type="password" id="matKhau" name="matKhau" class="form-control" formControlName="matKhau" placeholder="Nhập mật khẩu...">
+                    <div *ngIf="signInForm.get('matKhau').invalid && (signInForm.get('matKhau').touched||signInForm.get('matKhau').dirty)">
+                        <div *ngIf="signInForm.get('matKhau').errors.required">Mật Khẩu không được trống</div>
+                        <div *ngIf="signInForm.get('matKhau').errors.minlength">Mật khẩu có ít nhất 8 ký tự</div>
+                        <div *ngIf="signInForm.get('matKhau').errors.maxlength">mật khẩu nhiều nhất 20 ký tự</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Đăng nhập</button>
+
+            </form>
+        </div>
+    </div>
+</section>

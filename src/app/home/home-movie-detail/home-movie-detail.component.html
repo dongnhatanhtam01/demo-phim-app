@@ -1,0 +1,31 @@
+<section *ngIf="data" class="movie__detail">
+    <div class="movie__grid">
+        <div class="grid-item">
+            <img src={{data.hinhAnh}} [alt]="data.hinhAnh">
+        </div>
+        <div class="grid-item item-a">
+            <p>{{data.ngayKhoiChieu | date: 'dd.MM.yyyy'}}</p>
+            <h3>{{data.tenPhim}}</h3>
+            <p>91 phút - 0 IMDb - 2D/Digital</p>
+            <button class="detail-button">Mua vé</button>
+        </div>
+        <div class="grid-item item-b">
+            <div class="wrapper">
+                <div class="c100 p90 tamdna">
+                    <span>{{data.danhGia/10*100 }}%</span>
+                    <div class="slice">
+                        <div class="bar"></div>
+                        <div class="fill"></div>
+                    </div>
+                    <div class="star">
+                        <img src="assets/movPics/star1.png" alt="">
+                        <img src="assets/movPics/star1.png" alt="">
+                        <img src="assets/movPics/star1.png" alt="">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

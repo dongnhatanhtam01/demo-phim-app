@@ -1,0 +1,23 @@
+:host {
+    .authen-signIn {
+        padding: 10px;
+        background-image: url("/assets/movPics/bg2.jpg");
+        /* The image used */
+        background-color: #cccccc;
+        /* Used if the image is unavailable */
+        height: 100vh;
+        min-height: 100%;
+        /* You must set a specified height */
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+        /* Resize the background image to cover the entire container */
+        width: 100%;
+        background-attachment: fixed;
+    }
+    form {
+        padding: 10px;
+    }
+}
